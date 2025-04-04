@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "983226635042",
+    "project_id": "todo-app-rarecrew-aritra",
+    "storage_bucket": "todo-app-rarecrew-aritra.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983226635042:android:d8d7f57da08e4238b1cb7b",
+        "android_client_info": {
+          "package_name": "com.aritra.todo_app_rarecrew_aritra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl7JTRSBIvx_dTIW4Fj62xvzD0pDUifdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
