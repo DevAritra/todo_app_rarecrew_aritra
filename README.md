@@ -67,4 +67,9 @@ You can log in using any of the following test accounts:
 
 - UI dynamically adapts to screen size and ownership context
 
+## Author
+
+- Linkedin [@aritraadhikary](https://www.linkedin.com/in/aritraadhikary)
+- Email: [aritra.adhikary@yahoo.com](aritra.adhikary@yahoo.com)
+
 
