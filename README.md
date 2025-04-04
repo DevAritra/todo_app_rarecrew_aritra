@@ -1,16 +1,70 @@
-# todo_app_rarecrew_aritra
+# Flutter TODO App with Firebase by Aritra
 
-A new Flutter project.
+A responsive and scalable TODO application built with Flutter, Firebase, and the MVVM architecture using Provider for state management. The application supports real-time task collaboration through email-based task sharing and role-based access.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🔐 Demo Credentials
 
-A few resources to get you started if this is your first Flutter project:
+You can log in using any of the following test accounts:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Email                     | Password    |
+|--------------------------|-------------|
+| user1@mailinator.com     | Test@1234   |
+| user2@mailinator.com     | Test@1234   |
+| user3@mailinator.com     | Test@1234   |
+| user4@mailinator.com     | Test@1234   |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Features
+
+- Firebase Authentication (Email/Password)
+- Cloud Firestore for real-time data updates
+- MVVM architecture using Provider
+- Role-based task sharing (owner vs viewer)
+- Responsive design with `responsive_sizer`
+- Intuitive and clean user interface
+- Display customization based on task ownership:
+    - Owner sees: `Shared with:`
+    - Shared user sees: `Shared by:`
+- Each task includes a creation timestamp
+
+---
+
+## Tech Stack
+
+| Technology         | Usage                                      |
+|--------------------|--------------------------------------------|
+| **Flutter 3.24.5** | Core mobile development framework          |
+| **Dart 3.5.4**     | Language used with Flutter                 |
+| Firebase Auth      | User authentication                       |
+| Cloud Firestore    | Real-time database                         |
+| Provider           | State management                           |
+| responsive_sizer   | Responsive layout for multiple devices     |
+| MVVM Pattern       | Maintainable and testable code structure   |
+
+
+---
+
+### Prerequisites
+
+- Flutter SDK installed (version 3.24.5)
+
+### How It Works
+
+- Users sign in using email and password
+
+- Each user can create and manage tasks
+
+- Tasks can be shared with others via email
+
+- Task sharing is real-time and role-based:
+
+- Only the task owner can modify the shared user list
+
+- Shared users can view but not edit sharing permissions
+
+- UI dynamically adapts to screen size and ownership context
+
+
