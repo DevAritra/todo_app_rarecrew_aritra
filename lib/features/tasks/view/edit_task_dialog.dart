@@ -51,6 +51,7 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
           ? sharedEmails
           : widget.task!.sharedWith,
       createdAt: widget.task?.createdAt ?? now,
+      isDone: widget.task?.isDone ?? false, // ✅ Added line
     );
 
     try {

@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 import '../../../core/models/task_model.dart';
 import '../../../core/services/firestore_service.dart';
 
@@ -17,17 +18,16 @@ class TaskViewModel extends ChangeNotifier {
     final existingTasks = await _firestoreService.getTasks(currentUserEmail).first;
     final existing = existingTasks.firstWhere((t) => t.id == updatedTask.id, orElse: () => updatedTask);
 
-    // Only owner can update sharedWith list
-    final newTask = TaskModel(
-      id: updatedTask.id,
-      title: updatedTask.title,
-      description: updatedTask.description,
-      ownerEmail: updatedTask.ownerEmail,
-      sharedWith: existing.ownerEmail == currentUserEmail ? updatedTask.sharedWith : existing.sharedWith,
-      createdAt: updatedTask.createdAt,
+    final newTask = updatedTask.copyWith(
+      isDone: updatedTask.isDone,
     );
 
     await _firestoreService.updateTask(newTask);
+  }
+
+  Future<void> toggleTaskDone(TaskModel task, bool isDone) async {
+    final updated = task.copyWith(isDone: isDone);
+    await _firestoreService.updateTask(updated);
   }
 
   Future<void> deleteTask(String id) async {

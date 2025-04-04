@@ -100,6 +100,7 @@ class TaskScreen extends StatelessWidget {
   // Modern card UI
   Widget buildTaskCard(TaskModel task, bool isOwner, BuildContext context) {
     final createdDate = DateFormat('dd MMM yyyy hh:mm a').format(task.createdAt);
+    final taskVM = Provider.of<TaskViewModel>(context, listen: false);
 
     return Card(
       elevation: 6,
@@ -113,10 +114,20 @@ class TaskScreen extends StatelessWidget {
           children: [
             Row(
               children: [
+                Checkbox(
+                  value: task.isDone,
+                  onChanged: (value) {
+                    taskVM.toggleTaskDone(task, value ?? false);
+                  },
+                ),
                 Expanded(
                   child: Text(
                     task.title,
-                    style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 17.sp,
+                      fontWeight: FontWeight.bold,
+                      decoration: task.isDone ? TextDecoration.lineThrough : null,
+                    ),
                   ),
                 ),
                 IconButton(
@@ -132,7 +143,14 @@ class TaskScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 0.8.h),
-            Text(task.description, style: TextStyle(fontSize: 15.sp, color: Colors.black87)),
+            Text(
+              task.description,
+              style: TextStyle(
+                fontSize: 15.sp,
+                color: Colors.black87,
+                decoration: task.isDone ? TextDecoration.lineThrough : null,
+              ),
+            ),
             SizedBox(height: 1.h),
             Text("🕒 Created: $createdDate", style: TextStyle(fontSize: 13.sp, color: Colors.grey)),
             SizedBox(height: 0.5.h),

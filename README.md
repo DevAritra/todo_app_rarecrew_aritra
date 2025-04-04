@@ -32,6 +32,30 @@ You can log in using any of the following test accounts:
 
 ---
 
+## 🧠 Architecture
+
+- **Model**: `TaskModel`
+- **ViewModel**: `TaskViewModel`, `AuthViewModel`
+- **Service Layer**: Firebase operations (FirestoreService)
+- **UI**: Separated views and dialogs, responsive layout
+
+---
+
+## 📋 Task Permissions & Behavior
+
+- **Owners** can:
+  - Edit/delete the task
+  - Share/unshare with other emails
+  - Mark task as done/undone
+
+- **Shared Users** can:
+  - View task details
+  - Mark task as done/undone ✅ ❌
+
+> 🔄 Any user with access to a task can update its "Done" status by checking/unchecking a checkbox.
+
+---
+
 ## Tech Stack
 
 | Technology         | Usage                                      |

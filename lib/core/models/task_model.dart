@@ -7,6 +7,7 @@ class TaskModel {
   final String ownerEmail;
   final List<String> sharedWith;
   final DateTime createdAt;
+  final bool isDone;
 
   TaskModel({
     required this.id,
@@ -15,6 +16,7 @@ class TaskModel {
     required this.ownerEmail,
     required this.sharedWith,
     required this.createdAt,
+    required this.isDone,
   });
 
   factory TaskModel.fromMap(Map<String, dynamic> map) {
@@ -25,6 +27,7 @@ class TaskModel {
       ownerEmail: map['ownerEmail'] ?? '',
       sharedWith: List<String>.from(map['sharedWith'] ?? []),
       createdAt: (map['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
+      isDone: map['isDone'] ?? false,
     );
   }
 
@@ -36,6 +39,19 @@ class TaskModel {
       'ownerEmail': ownerEmail,
       'sharedWith': sharedWith,
       'createdAt': createdAt,
+      'isDone': isDone,
     };
+  }
+
+  TaskModel copyWith({bool? isDone}) {
+    return TaskModel(
+      id: id,
+      title: title,
+      description: description,
+      ownerEmail: ownerEmail,
+      sharedWith: sharedWith,
+      createdAt: createdAt,
+      isDone: isDone ?? this.isDone,
+    );
   }
 }
