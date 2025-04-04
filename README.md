@@ -32,7 +32,7 @@ You can log in using any of the following test accounts:
 
 ---
 
-## 🧠 Architecture
+## Architecture
 
 - **Model**: `TaskModel`
 - **ViewModel**: `TaskViewModel`, `AuthViewModel`
